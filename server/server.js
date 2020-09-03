@@ -3,10 +3,10 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 
-app.get('/', (req, res) => {
-  res.send("hello")
-});
+app.use(express.json());
 
-const port = process.env.PORT || 5000;
+app.get('/', (req, res) => {
+  res.send('hello');
+});
 
 app.listen(PORT, () => `Server running on port ${PORT} 🔥`);
